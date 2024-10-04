@@ -8,10 +8,6 @@ def draw_circle(event, x, y, flags, param):
     elif event == cv2.EVENT_RBUTTONDOWN:
         cv2.circle(img, (x,y), 100, (255,0,0),-1) # BGR in opencv
 
-    elif event == cv2.Even
-
-
-
 cv2.namedWindow(winname='my_drawing')
 
 cv2.setMouseCallback('my_drawing', draw_circle)
