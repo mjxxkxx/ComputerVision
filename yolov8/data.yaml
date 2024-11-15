@@ -1,0 +1,6 @@
+train: C:/Users/Administrator/Documents/GitHub/ComputerVision/yolov8/images/train
+val: C:/Users/Administrator/Documents/GitHub/ComputerVision/yolov8/images/val
+
+nc: 1
+names:
+  - face
