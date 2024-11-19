@@ -1,18 +1,23 @@
 from ultralytics import YOLO
-import multiprocessing as mp
 
-if __name__ == '__main__':
-    # Pre-trained YOLOv8 모델 로드
-    model = YOLO("yolov8n.pt")  # 'yolov8n.pt'는 Nano 모델입니다. 필요한 경우 다른 모델로 변경 가능.
+def train_model():
+    # YOLO 모델 로드
+    model = YOLO("yolov8n.pt")  # 필요한 경우 yolov8m.pt, yolov8l.pt 사용
 
-    # 학습 실행
+    # 학습 시작
     model.train(
-        data="C:/Users/Administrator/Documents/GitHub/ComputerVision/yolov8/data.yaml",  # data.yaml 경로
-        epochs=50,        # 학습 반복 횟수
-        imgsz=416,         # 입력 이미지 크기
-        batch=8,          # 배치 크기
-        workers=2,         # 데이터 로더의 워커 수
-        project="YOLOv8_WIDERFace",  # 프로젝트 이름
-        name="train_results",        # 결과 저장 폴더 이름
-        exist_ok=True                # 이미 폴더가 존재하면 덮어쓰기
+        data="D:/yolov8/data.yaml",
+        epochs=50,  # 학습 에포크
+        batch=8,  # 배치 크기
+        imgsz=416,  # 이미지 크기
+        save=True,
+        cache=True,
+        device=0,  # GPU 사용
+        half=True,
+        workers=0,
+        project="D:/yolov8/runs/train_augmented",
+        name="train_augmented"
     )
+
+if __name__ == "__main__":
+    train_model()
