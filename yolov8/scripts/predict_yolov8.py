@@ -11,7 +11,6 @@ iou_values = [0.4, 0.45, 0.5]
 # 결과 저장
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 project_dir = f"D:/yolov8/runs/detect_{timestamp}"
-
 print(f"Project directory: {project_dir}")
 
 for conf in conf_values:
@@ -25,6 +24,6 @@ for conf in conf_values:
             save_txt=True,
             project=project_dir,
             name=f"predict_conf{conf}_iou{iou}",
-            exist_ok=True,  # 덮어쓰기 가능
+            exist_ok=True,
         )
         print(f"Results saved for conf={conf}, iou={iou}.")
