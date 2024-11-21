@@ -3,7 +3,7 @@ import albumentations as A
 from albumentations.pytorch import ToTensorV2
 import cv2
 
-# 데이터 증강 설정
+# 데이터 증강 설정 gkgkgk
 augmentation = A.Compose([
     A.RandomBrightnessContrast(p=0.5),
     A.HorizontalFlip(p=0.5),
